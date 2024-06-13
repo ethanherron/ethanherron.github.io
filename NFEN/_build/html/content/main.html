@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction &#8212; My sample book</title>
+    <title>Finite Element Inspired Neural PDE Solvers &#8212; Neural Finite Element Networks</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
@@ -62,7 +62,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/main';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Notebooks with MyST Markdown" href="../markdown-notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -141,20 +142,14 @@
 
   
 
-<a class="navbar-brand logo" href="../intro.html">
+<a class="navbar-brand logo" href="#">
   
   
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
+    <p class="title logo__title">Neural Finite Element Networks</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -172,22 +167,13 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Welcome to your Jupyter Book
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Finite Element Inspired Neural PDE Solvers
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
-
-
-
-</ul>
-
+        
     </div>
 </nav></div>
     </div>
@@ -371,7 +357,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction</h1>
+    <h1>Finite Element Inspired Neural PDE Solvers</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,7 +367,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Finite Element Inspired Neural PDE Solvers</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-driven-approach">Data-Driven Approach</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-free-approach">Data-Free Approach</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-finite-element-networks">Neural Finite Element Networks</a></li>
@@ -411,8 +397,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="finite-element-inspired-neural-pde-solvers">
+<h1>Finite Element Inspired Neural PDE Solvers<a class="headerlink" href="#finite-element-inspired-neural-pde-solvers" title="Link to this heading">#</a></h1>
 <p>Neural PDEs are a termed used to describe machine learning models which
 model Partial Differential Equations. Within Neural PDEs there are two
 different approaches; data-driven, and data-free. Data-driven approaches
@@ -425,11 +411,10 @@ objective function formulated by the target Partial Differential
 Equation (PDE).</p>
 <p>Let’s use the Poisson Equation as an example.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\label{eq:poisson-intro}
-    \begin{align}
+\[\begin{split}\begin{align}
     - \mathbf{{\nabla}}\cdot [\nu(\mathbf{x}; q) \mathbf{{\nabla}}u(\mathbf{x}; q)] &amp;= f(\mathbf{x}) \ \ \text{in} \ \ \Omega, \\
     \alpha u + {\beta} (\nabla u\cdot \hat{\mathbf{x}{n}}) &amp;= g(\mathbf{x}) \ \ \text{on}\ \ \Gamma_o,
-    \end{align}\end{split}\]</div>
+\end{align}\end{split}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(u(x)\)</span> is a scalar function indicative of the mass density,
 electric potential, temperature, or surface indicator function,
 depending on your application of the Poisson Equation. <span class="math notranslate nohighlight">\(\nu\)</span> is the
@@ -473,8 +458,7 @@ function <span class="math notranslate nohighlight">\(f(\mathbf{x})\)</span>.</p
 the Poisson equation for our scalar function <span class="math notranslate nohighlight">\(u(x)\)</span> we get the
 following.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\label{eq:poisson-nn}
-    \begin{align}
+\[\begin{split}\begin{align}
     - \mathbf{{\nabla}}\cdot [\nu(\mathbf{x}; q) \mathbf{{\nabla}}u_{\theta}(\mathbf{x}; q)] &amp;= f(\mathbf{x}) \ \ \text{in} \ \ \Omega, \\
     \alpha u_{\theta} + {\beta} (\nabla u_{\theta}\cdot \hat{\mathbf{x}{n}}) &amp;= g(x) \ \ \text{on}\ \ \Gamma_o,
     \end{align}\end{split}\]</div>
@@ -510,12 +494,11 @@ equation over a distribution of material diffusivity coefficient fields,
 and solving the Poisson equation over a distribution of irregular
 geometries inside of the domain. We have also included a brief overview
 of FEM in an appendix section at the end of this post.</p>
-<figure id="fig:ibn_framework">
-<embed src="attachment:ibn_framework_u_theta.pdf" />
-<figcaption>Outline of an NFEN framework which maps an irregular
-geometry to the field solution of the given PDE, in this example the
-Poisson equation, to its field solution over the irregular
-geometry.</figcaption>
+<figure class="align-default" id="fig-ibn-framework">
+<img alt="../_images/ibn_framework_u_theta.png" src="../_images/ibn_framework_u_theta.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Outline of an NFEN framework which maps an irregular geometry to the field solution of the given PDE, in this example the Poisson equation, to its field solution over the irregular geometry.</span><a class="headerlink" href="#fig-ibn-framework" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
 </section>
 </section>
@@ -523,9 +506,7 @@ geometry.</figcaption>
 <h1>Neural Finite Element Networks<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>NFEN is a machine learning framework that learns a mapping between some
 input, a coefficient field, an object boundary, etc. to the field
-solution of the target PDE. Figure
-<a href="#fig:ibn_framework" data-reference-type="ref"
-data-reference="fig:ibn_framework">1</a> provides an overview of the
+solution of the target PDE. <a class="reference internal" href="#fig-ibn-framework"><span class="std std-numref">Fig. 1</span></a> provides an overview of the
 NFEN framework predicting field solutions to the Poisson equation over
 an object boundary. The loss term for NFENs is the residual of the
 target PDE, where each term in the PDE is computed via FEMs. Since the
@@ -546,23 +527,18 @@ formulation, and present results in 2D and 3D for the given problem
 formulation.</p>
 <section id="material-properties">
 <h2>Material Properties<a class="headerlink" href="#material-properties" title="Link to this heading">#</a></h2>
-<figure id="fig:poisson-kl-contours-2">
-<img src="attachment:anec-2d-single-query.png" style="width:95.0%" />
-<figcaption>(Left) contours of <span
-class="math inline">ln (<em>ν</em>)</span>, the input diffusivity field,
-(middle-left) NFEN prediction (<span
-class="math inline"><em>u</em><sub><em>θ</em></sub></span>),
-(midddle-right) reference numerical solution using FEM (<span
-class="math inline"><em>u</em><sup><em>h</em></sup></span>), (right)
-contours of <span
-class="math inline">(<em>u</em><sub><em>θ</em></sub> − <em>u</em><sup><em>h</em></sup>)</span></figcaption>
+<figure class="align-default" id="fig-anec-2d-single-query">
+<img alt="../_images/anec-2d-single-query.png" src="../_images/anec-2d-single-query.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Left: contours of <span class="math notranslate nohighlight">\(ln(ν)\)</span>, the input diffusivity field; middle-left: NFEN prediction (<span class="math notranslate nohighlight">\(u_θ\)</span>); middle-right: reference numerical solution using FEM (<span class="math notranslate nohighlight">\(u^h\)</span>); right: contours of (<span class="math notranslate nohighlight">\(u_θ - u^h\)</span>).</span><a class="headerlink" href="#fig-anec-2d-single-query" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
 <p>For our first example problem we apply NFENs to the heat or mass
 transfer problem through an inhomogenous media. In this problem we
 created a dataset where each sample is a unique coefficient field
 defining the diffusivity. The NFEN learns a mapping between a
 <em>distribution</em> of diffusivity coefficient fields to the corresponding
-field solution of the Poisson equation. The dataset created only
+field solution of the Poisson equation. The dataset created
 contains <span class="math notranslate nohighlight">\(N\)</span> different diffusivity fields. This dataset does not contain
 any ground truth field solutions for the corresponding diffusivity
 field. The ground truth field solutions are not required to train the
@@ -570,7 +546,6 @@ NFEN since the residual is computed via FEM. The loss function for this
 NFEN formulation is:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-\label{def:loss-fem-poisson-kl-concrete}
 \mathcal{L} = \frac{1}{N} \sum_{i = 1}^{N} \int_{\Omega} \nu_i(\mathbf{x})|\mathbf{{\nabla}}u_{\theta}(\mathbf{x}; q_i)|^2 d\mathbf{x},
 \end{aligned}\]</div>
 <p>where <span class="math notranslate nohighlight">\(q_i\)</span> is our variable input, in this case the diffusivity
@@ -589,44 +564,31 @@ diffusivity fields, given they are drawn from the same distribution used
 to create the training dataset. This generalization ability from NFEN
 classifies it as a data-free <strong>Neural Operator</strong>, something in the
 current landscape that has not been achieved.</p>
-<p>In Figures
-<a href="#fig:poisson-kl-contours-2" data-reference-type="ref"
-data-reference="fig:poisson-kl-contours-2">2</a> and
-<a href="#fig:poisson-kl-3d-contours" data-reference-type="ref"
-data-reference="fig:poisson-kl-3d-contours">[fig:poisson-kl-3d-contours]</a>,
-we present results for NFEN in two and three dimensional domains.</p>
-<p><img src="attachment:anec-3d-k-iso.png" style="width:47.0%"
-alt="image" />
-<img src="attachment:anec-3d-k-slices.png" style="width:47.0%"
-alt="image" />
-<img src="attachment:anec-3d-u-iso.png" style="width:47.0%"
-alt="image" />
-<img src="attachment:anec-3d-u-slices.png" style="width:47.0%"
-alt="image" /></p>
+<p>In <a class="reference internal" href="#fig-anec-2d-single-query"><span class="std std-numref">Fig. 2</span></a> and <a class="reference internal" href="#fig-anec-3d"><span class="std std-numref">Fig. 3</span></a>, we present results for NFEN in two and three dimensional domains.</p>
+<figure class="align-default" id="fig-anec-3d">
+<img alt="../_images/anec_3d.png" src="../_images/anec_3d.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Contours of <span class="math notranslate nohighlight">\(\ln(\nu(x,y,z))\)</span> and the solution <span class="math notranslate nohighlight">\(u_{\theta}(x,y,z)\)</span> to the 3D Poisson’s problem on a <span class="math notranslate nohighlight">\( 64\times 64\times 64 \)</span> mesh (for <span class="math notranslate nohighlight">\( \mathbf{a} = (-1,1.4,1.5,-1.3,-1.6,0.3) \)</span>).</span><a class="headerlink" href="#fig-anec-3d" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="immersed-object">
 <h2>Immersed Object<a class="headerlink" href="#immersed-object" title="Link to this heading">#</a></h2>
-<figure id="fig:2d_operator_results">
-<embed src="attachment:Figures/2d_operator.pdf" />
-<figcaption>Results for a <strong><em>single</em></strong> 2D NFEN which
-maps an unseen irregular geometry to the field solution of the Poisson
-equation. The first and fourth columns are the masks of the irregular
-geometry, the second and fifth columns are the predicted field solution,
-the third and sixth columns are the ground truth FEM field
-solution.</figcaption>
+<figure class="align-default" id="d-operator">
+<img alt="../_images/2d_operator.png" src="../_images/2d_operator.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Results for a <em>single</em> 2D NFEN which maps an unseen irregular geometry to the field solution of the Poisson equation. The first and fourth columns are the masks of the irregular geometry, the second and fifth columns are the predicted field solution, the third and sixth columns are the ground truth FEM field solution.</span><a class="headerlink" href="#d-operator" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
 <p>NFENs are very flexible and are even capable of learning field solutions
-of domains that contain irregular geometries such as Figure
-<a href="#fig:2d_operator_results" data-reference-type="ref"
-data-reference="fig:2d_operator_results">3</a>. For this problem NFEN
+of domains that contain irregular geometries such as <a class="reference internal" href="#d-operator"><span class="std std-numref">Fig. 4</span></a>. For this problem NFEN
 learns a mapping between a mask of the irregular geometry in the domain
 and the field solution which satisfies the given PDE over the domain
 with the irregular geometry.</p>
 <p>Lets continue with the same Poisson equation example, but with the added
 boundary conditions for the irregular object. We now have,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\label{eq:poisson-nn}
-    \begin{align}
+\[\begin{split}\begin{align}
     - \mathbf{{\nabla}}\cdot [\nu(\mathbf{x}; q) \mathbf{{\nabla}}u_{\theta}(\mathbf{x}; q)] &amp;= f(\mathbf{x}) \ \ \text{in} \ \ \Omega, \\
         u_{\theta}(\mathbf{x},q) &amp;= 0, \ \text{on}\ \Gamma_B, \\
     \alpha u_{\theta} + {\beta} (\nabla u_{\theta}\cdot \hat{\mathbf{x}{n}}) &amp;= g(x) \ \ \text{on}\ \ \Gamma_o,
@@ -650,17 +612,13 @@ previous NFEN example.</p>
 <p>The training dataset for this problem is a distribution of irregular
 geometries, opposed to diffusivity fields in the previous problem. The
 distribution of these ’irregular geometries’ may vary wildly, as the
-binary images in Figure
-<a href="#fig:2d_operator_results" data-reference-type="ref"
-data-reference="fig:2d_operator_results">3</a> show. The results shown
-in Figure <a href="#fig:2d_operator_results" data-reference-type="ref"
-data-reference="fig:2d_operator_results">3</a> come from a similar
+binary images in <a class="reference internal" href="#d-operator"><span class="std std-numref">Fig. 4</span></a> show. The results shown
+in <a class="reference internal" href="#d-operator"><span class="std std-numref">Fig. 4</span></a> come from a similar
 distribution as the training dataset, but are all samples from the test
 dataset.</p>
 <p>The loss function for this problem is as follows,</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-\label{def:loss-fem-poisson-kl-concrete}
     \mathcal{L} = \frac{1}{N} \sum_{i = 1}^{N} \int_{\Omega} |\mathbf{{\nabla}}u_{\theta}(\mathbf{x}; q_i)|^2 d\mathbf{x},
 \end{aligned}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N\)</span> is a mini-batch of irregular geometries from the training
@@ -672,19 +630,17 @@ solutions to irregular boundaries not contained in the training dataset.
 This second example supports the potential for neural networks to learn
 PDEs in a data-free regime without the need to be retrained for a new
 unseen input geometry.</p>
-<embed src="attachment:Engine.pdf" style="width:49.0%" />
-<embed src="attachment:Humvee.pdf" style="width:49.0%" />
-<figure id="fig:poisson-inside-object-bunny">
-<p><embed src="attachment:bunny_geo.pdf" style="width:44.0%" /> <embed
-src="attachment:bunny_ibn_w_cBar.pdf" style="width:55.0%" /><br />
-</p>
-<figcaption>(Left) the “Stanford bunny” placed within the background
-domain, (right) a single-instance NFEN for the Poisson equation is
-solved on the bunny using NFEN. The forcing <span
-class="math inline"><em>f</em> = 500</span>, and the boundary condition
-is given by <span class="math inline"><em>u</em> = 0</span> on the
-surface of the bunny. This is an example where the solution is sought
-<em>inside</em> the object rather than outside.</figcaption>
+<figure class="align-default" id="engine-humvee">
+<img alt="../_images/engine_humvee.png" src="../_images/engine_humvee.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Geometric model with the domain (left) and the field solution to Poisson’s equation using the NFEN framework (right) for the Engine and the Humvee models.</span><a class="headerlink" href="#engine-humvee" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="bunnies">
+<img alt="../_images/bunnies.png" src="../_images/bunnies.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Left: the “Stanford bunny” placed within the background domain; Right: a single-instance NFEN for the Poisson equation is solved on the bunny using NFEN. The forcing <span class="math notranslate nohighlight">\(f = 500\)</span>, and the boundary condition is given by <span class="math notranslate nohighlight">\(u = 0\)</span> on the surface of the bunny. This is an example where the solution is sought <em>inside</em> the object rather than outside.</span><a class="headerlink" href="#bunnies" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
 </section>
 </section>
@@ -711,32 +667,17 @@ components, called ’elements’. Each of these elements is representative
 of a smaller and much simpler equation than the PDE governing the given
 domain. One can solve this larger, more complex PDE by solving the
 system of smaller element-wise equations.</p>
-<figure id="fig:fem-mesh-with-gauss-pt">
-<figcaption>(Left) A single 2D element in FEM, with black dots denoting
-“nodes" and red dots denoting <span class="math inline">2 × 2</span>
-Gauss quadrature points. (Right) A finite element mesh, with <span
-class="math inline">4 × 3</span> linear elements and <span
-class="math inline">5 × 4</span> nodes. Each of these elements contains
-Gauss points for integration to be performed within that element. Within
-each element, the “first" quadrature point (marked “1" on left) is
-marked green, and others red.</figcaption>
+<figure class="align-default" id="gauss-points">
+<img alt="../_images/gauss_point.png" src="../_images/gauss_point.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Left: A single 2D element in FEM, with black dots denoting “nodes” and red dots denoting 2×2 Gauss quadrature points. Right: A finite element mesh, with 4×3 linear elements and 5×4 nodes. Each of these elements contains Gauss points for integration to be performed within that element. Within each element, the “first” quadrature point (marked “1” on left) is marked green, and others red.</span><a class="headerlink" href="#gauss-points" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
-<figure id="fig:fem-function-evaluation-at-single-gauss-pt">
-<figcaption>Quadrature quantity evaluation in FEM context. <span
-class="math inline">(<em>U</em><sub><em>θ</em></sub><sup><em>d</em></sup>)<sub><em>M</em></sub></span>
-is the matrix view of the nodal values.<span
-class="math inline"><em>K</em><sub><em>G</em><em>P</em>1</sub></span> is
-kernel containing the basis function values at “gauss point - 1" (top
-left corner). This convolution results in the function values evaluated
-at the Gauss point “1" of each element (marked green). <span
-class="math inline">(<em>U</em><sub><em>θ</em></sub><sup><em>d</em></sup><sub><em>G</em><em>P</em>1</sub>)<sub><em>M</em></sub></span>
-is the matrix of this result. Function values (or their derivatives)
-evaluated at Gauss points can then be used in any integral evaluation.
-For example, <span class="math inline">$\int u^h dD = |J| \sum_{I\in M}
-\left[\sum_{i=1}^{4}(w_i (U^d_\theta)_{GPi})_M\right]$</span>, where
-<span class="math inline">|<em>J</em>|</span> is the transformation
-Jacobian for integration and <span class="math inline"><em>w</em></span>
-are the quadrature weights.</figcaption>
+<figure class="align-default" id="int-gauss">
+<img alt="../_images/integrationFEM.png" src="../_images/integrationFEM.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Quadrature quantity evaluation in FEM context. <span class="math notranslate nohighlight">\((U_θ^d)_M\)</span> is the matrix view of the nodal values. <span class="math notranslate nohighlight">\(K_{GP1}\)</span> is kernel containing the basis function values at “gauss point - 1” (top left corner). This convolution results in the function values evaluated at the Gauss point “1” of each element (marked green). <span class="math notranslate nohighlight">\(((U_θ^d)_{GP1})_M\)</span> is the matrix of this result. Function values (or their derivatives) evaluated at Gauss points can then be used in any integral evaluation. For example, <span class="math notranslate nohighlight">\(\int u^h dD = |J| \sum_{I\in M} \left[\sum_{i=1}^{4}(w_i (U^d_θ)_{GPi})_M\right]\)</span>, where <span class="math notranslate nohighlight">\(|J|\)</span> is the transformation Jacobian for integration and <span class="math notranslate nohighlight">\(w\)</span> are the quadrature weights.</span><a class="headerlink" href="#int-gauss" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
 <section id="discretization-elements-and-basis-functions">
 <h2>Discretization: Elements and Basis Functions<a class="headerlink" href="#discretization-elements-and-basis-functions" title="Link to this heading">#</a></h2>
@@ -744,8 +685,7 @@ are the quadrature weights.</figcaption>
 our domain is a uniform grid in 2D, simply an image. The nodes defining
 our domain are the pixels in the image. The elements used in the FEM
 computations will be the area between neighborhoods of adjacent nodes.
-Figure <a href="#fig:fem-mesh-with-gauss-pt" data-reference-type="ref"
-data-reference="fig:fem-mesh-with-gauss-pt">5</a> provides a visual of
+<a class="reference internal" href="#gauss-points"><span class="std std-numref">Fig. 7</span></a> provides a visual of
 constructing a single element. In this example an element can also be
 thought of as the resulting pixel from a 2D convolution operation with a
 kernel size of <span class="math notranslate nohighlight">\((2,2)\)</span> and a stride of <span class="math notranslate nohighlight">\(1\)</span>. The values of each element
@@ -760,9 +700,7 @@ but higher-order bases are often used to obtain better accuracy.</p>
 </section>
 <section id="using-fem-to-compute-spatial-derivatives-of-field-solutions">
 <h2>Using FEM to Compute Spatial Derivatives of Field Solutions<a class="headerlink" href="#using-fem-to-compute-spatial-derivatives-of-field-solutions" title="Link to this heading">#</a></h2>
-<p>Going back to our example of the Poisson Equation in
-<a href="#eq:poisson-intro" data-reference-type="ref"
-data-reference="eq:poisson-intro">[eq:poisson-intro]</a>, to solve for
+<p>Going back to our example of the Poisson Equation, to solve for
 the field solution <span class="math notranslate nohighlight">\(u(x)\)</span>, where <span class="math notranslate nohighlight">\(u(x)\)</span> is a uniform 2D grid, we need to
 compute the spatial derivatives since
 <span class="math notranslate nohighlight">\(\nabla u(\mathbf{x}) = u_{xx} + u_{yy}\)</span>. Computing the spatial
@@ -821,15 +759,6 @@ imposed on data-free Neural PDE Solvers.</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../markdown-notebooks.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Notebooks with MyST Markdown</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
@@ -846,7 +775,7 @@ imposed on data-free Neural PDE Solvers.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Finite Element Inspired Neural PDE Solvers</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-driven-approach">Data-Driven Approach</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-free-approach">Data-Free Approach</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-finite-element-networks">Neural Finite Element Networks</a></li>
@@ -879,7 +808,7 @@ imposed on data-free Neural PDE Solvers.</p>
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Ethan Herron, Biswajit Khara, Baskar Ganapathysubramanian, Adarsh Krishnamurthy
 </p>
 
   </div>

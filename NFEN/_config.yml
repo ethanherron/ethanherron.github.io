@@ -1,9 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
-logo: logo.png
+title: Neural Finite Element Networks
+author: Ethan Herron, Biswajit Khara, Baskar Ganapathysubramanian, Adarsh Krishnamurthy
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -30,3 +29,11 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  logo: ""  # Path to your custom logo file (optional)
+  # favicon: images/favicon.ico  # Path to a favicon (optional)
+
+  # Theme settings
+  theme:
+    name: default
+    # logo: images/logo.png  # Path to your custom logo file (optional)
+
